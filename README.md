@@ -1,6 +1,8 @@
 # About this extension, with Director's Commentary
 I just yoinked https://codeberg.org/stephaniebread/gnome-hide-volume-indicator, and changed a very few words around.
 
+Why do I need this? I have a Chuwi Hi10 X1, which is an incredibly cute little N100 tablet. It has a very 800px wide panel, and a *very* blue backlit one at that. I keep the night-light mode on all of the time just to knock edge off of the blue tint. I'm doing that with Dash-To-Panel on top (so it deconflicts with the OSK on the bottom). As such, any horizontal space that I can save here means more room for app icons.
+
 # The O.G. extension's notes
 👇
 
