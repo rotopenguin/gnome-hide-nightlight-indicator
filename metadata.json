@@ -1,12 +1,12 @@
 {
-  "description": "Completely hide volume indicator",
-  "name": "Hide Volume Indicator",
+  "description": "Completely hide Nightlight indicator",
+  "name": "Hide Nightlight Indicator",
   "shell-version": [
     "45",
     "46",
     "47"
   ],
-  "url": "https://codeberg.org/stephaniebread/gnome-hide-volume-indicator",
-  "uuid": "hide-volume-indicator@stephaniebread",
-  "version": 2
+  "url": "https://github.com/rotopenguin/gnome-hide-nightlight-indicator",
+  "uuid": "hide-nightlight-indicator@rotopenguin.net",
+  "version": 1
 }

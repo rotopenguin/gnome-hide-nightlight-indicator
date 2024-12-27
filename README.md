@@ -1,3 +1,9 @@
+# About this extension, with Director's Commentary
+I just yoinked https://codeberg.org/stephaniebread/gnome-hide-volume-indicator, and changed a very few words around.
+
+# The O.G. extension's notes
+👇
+
 # Hide Volume indicator
 
 This extension will completely hide volume indicator on your gnome >45 desktop.
