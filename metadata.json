@@ -1,0 +1,12 @@
+{
+  "description": "Completely hide volume indicator",
+  "name": "Hide Volume Indicator",
+  "shell-version": [
+    "45",
+    "46",
+    "47"
+  ],
+  "url": "https://codeberg.org/stephaniebread/gnome-hide-volume-indicator",
+  "uuid": "hide-volume-indicator@stephaniebread",
+  "version": 2
+}
