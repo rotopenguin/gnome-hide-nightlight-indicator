@@ -1,29 +1,31 @@
 import GLib from 'gi://GLib';
 import {panel} from 'resource:///org/gnome/shell/ui/main.js';
+import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 
-export default class HideVolume {
-
-	_hideNightLightIndicator() {
-		panel.statusArea.quickSettings._nightLight.hide();
-	}
-
-	_queueHideNightLightIndicator() {
-		GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
-			if (!panel.statusArea.quickSettings._nightLight)
+export default class HideNightLight extends Extension {
+	enable() {
+		this.sourceId = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
+			this.nightLightIndicator = panel.statusArea.quickSettings._nightLight;
+			if (!this.nightLightIndicator)
 				return GLib.SOURCE_CONTINUE;
 
-			this._hideNightLightIndicator();
+			this.nightLightIndicator.hide();
+			this.showSignal = this.nightLightIndicator.connect("show", () => {
+				this.nightLightIndicator.hide();
+			});
+			this.sourceId = null;
 			return GLib.SOURCE_REMOVE;
-	})}
-
-	enable() {
-		if (panel.statusArea.quickSettings._nightLight)
-			this._hideNightLightIndicator();
-		else
-			this._queueHideNightLightIndicator();
+		});
 	}
 
 	disable() {
-		panel.statusArea.quickSettings._nightLight.show();
+		// The "unlock-dialog" session mode is used to hide the volume indicator on the lockscreen.
+		if (this.sourceId) {
+			GLib.Source.remove(this.sourceId);
+		}
+		if (this.nightLightIndicator) {
+			this.nightLightIndicator.disconnect(this.showSignal);
+			this.nightLightIndicator.show();
+		}
 	}
 }
