@@ -1,5 +1,5 @@
 {
-  "description": "Completely hide Nightlight indicator",
+  "description": "Hide Nightlight indicator. Shamelessly stolen from [Hide Volume Indicator]",
   "name": "Hide Nightlight Indicator",
   "shell-version": [
     "45",
